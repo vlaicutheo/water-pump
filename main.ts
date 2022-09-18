@@ -1,8 +1,8 @@
 let umiditate = 0
 input.onButtonPressed(Button.A, function () {
-    pins.analogWritePin(AnalogPin.P0, 1000)
+    pins.digitalWritePin(DigitalPin.P0, 1)
     basic.pause(1000)
-    pins.analogWritePin(AnalogPin.P0, 0)
+    pins.digitalWritePin(DigitalPin.P0, 0)
     basic.showIcon(IconNames.Yes)
 })
 input.onButtonPressed(Button.B, function () {
@@ -17,9 +17,9 @@ basic.forever(function () {
     basic.pause(2000)
     if (umiditate > 600) {
         basic.showString("Uscat")
-        pins.analogWritePin(AnalogPin.P0, 1000)
-        basic.pause(1000)
-        pins.analogWritePin(AnalogPin.P0, 0)
+        pins.digitalWritePin(DigitalPin.P0, 1)
+        basic.pause(5000)
+        pins.digitalWritePin(DigitalPin.P0, 0)
         basic.showIcon(IconNames.Yes)
     } else {
         basic.showString("Umed")
